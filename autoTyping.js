@@ -1,4 +1,4 @@
-function MoA_AutoTyping(toApplyAutoTyping = $('.MA_AutoTyping'), wordsToType = Array(),option)
+function AutoType(toApplyAutoTyping = $('.MA_AutoTyping'), wordsToType = Array(),option)
 {
     this.CharacterCnt = 0;
     this.options = 
@@ -18,6 +18,7 @@ function MoA_AutoTyping(toApplyAutoTyping = $('.MA_AutoTyping'), wordsToType = A
         this.options.timeBetweenWords = option.timeBetweenWords ? option.timeBetweenWords : 1000;
     }
 
+
     function WordCnt()
     {
         this.value = 0;                       // Initial Value
@@ -36,6 +37,7 @@ function MoA_AutoTyping(toApplyAutoTyping = $('.MA_AutoTyping'), wordsToType = A
         this.Increament = function()
         {
             this.value = (this.value + 1) % wordsToType.length;
+
             for (let i = 0 ; i < this.invokeFunctions.length; i++)
             {
                 setTimeout(this.invokeFunctions[i].functionality, this.invokeFunctions[i].delay);
@@ -76,4 +78,13 @@ function MoA_AutoTyping(toApplyAutoTyping = $('.MA_AutoTyping'), wordsToType = A
 }
 
 
-MoA_AutoTyping($('.MA_AutoTyping'), ["Hello There!", "I'm Mohammed Adel", "A Front End Developer"],{speed: 50});
+AutoType($('Your Container'), ["Example-1", "Example-2", "Example-3"],{speed: 10});
+
+
+
+
+
+
+
+
+
